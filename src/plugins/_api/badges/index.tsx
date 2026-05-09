@@ -216,9 +216,25 @@ export default definePlugin({
                     replace: "...$1.props,$&"
                 },
                 {
+<<<<<<< HEAD
                     match: /(?<=forceOpen:.{0,60}?ariaHidden:!0,?)children:(?=.{0,80}?(\i)\.id)/,
                     replace: "children:$1.component?$self.renderBadgeComponent({...$1}) :"
                 },
+=======
+<<<<<<< HEAD
+                    match: /(?<=forceOpen:.{0,40}?ariaHidden:!0,)children:(?=.{0,50}?(\i)\.id)/,
+                    replace: "children:$1.component?$self.renderBadgeComponent({...$1}):"
+                },
+                // Path with 2026-04-badge-discovery ON
+                {
+                    match: /(?<=fallbackIconSrc:.{0,50}?)children:(?=.{0,50}?(\i)\.id)/,
+                    replace: "children:$1.component?$self.renderBadgeComponent({...$1}):"
+=======
+                    match: /(?<=forceOpen:.{0,60}?ariaHidden:!0,?)children:(?=.{0,80}?(\i)\.id)/,
+                    replace: "children:$1.component?$self.renderBadgeComponent({...$1}) :"
+>>>>>>> 58673569 (Added philsPlugin Library and fakeDeafen, platformSpoofer and followUser plugins)
+                },
+>>>>>>> a9afa382 (Added philsPlugin Library and fakeDeafen, platformSpoofer and followUser plugins)
                 {
                     match: /href:(\i)\.link/,
                     replace: "...$self.getBadgeMouseEventHandlers($1),$&"

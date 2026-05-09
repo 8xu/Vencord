@@ -40,7 +40,15 @@ export interface ProfileBadge {
     /** Action to perform when you click the badge */
     onClick?(event: React.MouseEvent, props: ProfileBadge & BadgeUserArgs): void;
     /** Action to perform when you right click the badge */
+<<<<<<< HEAD
     onContextMenu?(event: React.MouseEvent, props: BadgeUserArgs & ProfileBadge): void;
+=======
+<<<<<<< HEAD
+    onContextMenu?(event: React.MouseEvent, props: ProfileBadge & BadgeUserArgs): void;
+=======
+    onContextMenu?(event: React.MouseEvent, props: BadgeUserArgs & ProfileBadge): void;
+>>>>>>> 58673569 (Added philsPlugin Library and fakeDeafen, platformSpoofer and followUser plugins)
+>>>>>>> a9afa382 (Added philsPlugin Library and fakeDeafen, platformSpoofer and followUser plugins)
     /** Should the user display this badge? */
     shouldShow?(userInfo: BadgeUserArgs): boolean;
     /** Optional props (e.g. style) for the badge, ignored for component badges */
