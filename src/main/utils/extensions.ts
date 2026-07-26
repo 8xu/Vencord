@@ -62,7 +62,7 @@ async function extract(data: Buffer, outDir: string) {
 }
 
 export async function installExt(id: string) {
-    const extDir = join(extensionCacheDir, `${id}`);
+    const extDir = join(extensionCacheDir, id);
 
     try {
         await access(extDir, fsConstants.F_OK);
@@ -79,5 +79,9 @@ export async function installExt(id: string) {
             .catch(err => console.error(`Failed to extract extension ${id}`, err));
     }
 
-    session.defaultSession.loadExtension(extDir);
+    if (session.defaultSession.extensions) {
+        session.defaultSession.extensions.loadExtension(extDir);
+    } else {
+        session.defaultSession.loadExtension(extDir);
+    }
 }
